@@ -38,23 +38,3 @@ def solve(size, n, queenArray):
             queenArray.append((n, col_n))
             solve(size, n + 1, queenArray)
             queenArray.pop()
-
-
-def solve2(size):
-    for col0 in range(size):
-        if not is_Valid((0, col0), []):
-            continue
-        for col1 in range(size):
-            if not is_Valid((1, col1), [(0, col0)]):
-                continue 
-            for col2 in range(size):
-                if not is_Valid((2, col2), [(0, col0), (1, col1)]):
-                    continue
-                for col3 in range(size):
-                    if not is_Valid((3, col3), [(0, col0), (1, col1), (2, col2)]):
-                        continue
-                    return [(0, col0), (1, col1), (2, col2), (3, col3)]
-print(solve2(4))
-solve(4, 0, [])
-#solve(4, [(0, 1), (1, 3), (2, 0), (3, 2)])
-#check.expect("valid solution", solve(4, [(0, 1), (1, 3), (2, 0), (3, 2)]), True) 
