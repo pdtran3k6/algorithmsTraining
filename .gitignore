@@ -1,2 +1,4 @@
 .vscode/
 __pycache__/
+a.out
+a.out.dSYM/
